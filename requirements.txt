@@ -1,0 +1,9 @@
+Django==1.4.1
+South==0.7.6
+argparse==1.2.1
+django-classy-tags==0.3.4.1
+django-cms==2.3.2
+django-mptt==0.5.2
+django-sekizai==0.6.1
+html5lib==0.95
+wsgiref==0.1.2

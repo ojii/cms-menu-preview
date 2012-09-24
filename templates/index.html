@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMS Menu Preview</title>
+    <style>
+        textarea {
+            width:300px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+<h2>CMS Menu Preview</h2>
+<h2>Input</h2>
+<form method="post">{% csrf_token %}
+<div>
+    <input type="number" value="{{ from_level|default:0 }}" name="from_level" />
+    <input type="number" value="{{ to_level|default:100 }}" name="to_level" />
+    <input type="number" value="{{ extra_inactive|default:0 }}" name="extra_inactive" />
+    <input type="number" value="{{ extra_active|default:0 }}" name="extra_active" />
+</div>
+<div>
+<textarea name="tree">{{ tree }}</textarea>
+</div>
+<p>The star at the end of a line indicates this is the current page.</p>
+<div><input type="submit" /></div>
+</form>
+<h2>Output</h2>
+<textarea>{{ output }}</textarea>
+</body>
+</html>
