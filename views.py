@@ -131,6 +131,8 @@ def build(tree, from_level, to_level, extra_active, extra_inactive):
     with SettingsOverride(SITE_ID=site.pk):
         Site.objects.clear_cache()
         ShowMenu(dummy_parser, tokens).render(context)
+    Page.objects.filter(site=site).delete()
+    site.delete()
     nodes = context['children']
     flat = flatten(nodes)
     def _rec(nodes, level=0):
